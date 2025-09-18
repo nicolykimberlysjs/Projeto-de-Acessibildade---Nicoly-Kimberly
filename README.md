@@ -1,10 +1,11 @@
-<h5>Projeto-de-Acessibildade-Nicoly-Kimberly</h5> 
+<h5>Projeto de Acessibilidade-NIcoly Kimberly</h5>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <p>CineMundo — Filmes</p>
+  <title>CineMundo — Filmes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,10 +33,10 @@
     <section id="destaques">
       <h2>Filmes em Destaque</h2>
       <div class="grid">
-        <div class="card">🎥 O Poderoso Chefão</div>
-        <div class="card">🌌 Interestelar</div>
-        <div class="card">🦖 Jurassic Park</div>
-        <div class="card">🦸 Vingadores: Ultimato</div>
+        <div class="card">🎥 Invocação do mal 4</div>
+        <div class="card">🌌 Os aventureios</div>
+        <div class="card">🗻 Indiana Jones</div>
+        <div class="card">🦸 MIssão impossivel</div>
       </div>
     </section>
     <section id="generos">
@@ -45,14 +46,14 @@
         <li>Comédia</li>
         <li>Drama</li>
         <li>Ficção Científica</li>
-        <li>Animação</li>
+        <li>Terror</li>
       </ul>
     </section>
     <section id="contato">
       <h2>Contato</h2>
       <p>Quer sugerir um filme ou dar feedback? Envie uma mensagem!</p>
       <form>
-        <label for="nome">Nome
+        <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome" required><br><br>
         <label for="mensagem">Mensagem:</label><br>
         <button type="submit">Enviar</button>
