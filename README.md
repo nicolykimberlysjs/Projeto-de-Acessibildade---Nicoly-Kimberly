@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="#conteudo" class="sr-only">Pular para o conteúdo</a>
 
   <header>
     <h1>CineMundo</h1>
