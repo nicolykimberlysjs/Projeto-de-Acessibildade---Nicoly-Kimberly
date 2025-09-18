@@ -52,7 +52,7 @@
       <h2>Contato</h2>
       <p>Quer sugerir um filme ou dar feedback? Envie uma mensagem!</p>
       <form>
-        <label for="nome">Nome:</label><br>
+        <label for="nome">Nome
         <input type="text" id="nome" name="nome" required><br><br>
         <label for="mensagem">Mensagem:</label><br>
         <button type="submit">Enviar</button>
