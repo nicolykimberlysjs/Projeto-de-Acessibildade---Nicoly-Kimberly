@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMundo — Filmes</title>
+  <style>
+    :root {
+      --bg: #fdfbff;
+      --text: #2d2d2d;
+      --accent: #8a4fff;
+      --accent-light: #d2b3ff;
+      --card: #fff;
+      --radius: 12px;
+      --scale: 1;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: calc(16px * var(--scale));
+      line-height: 1.6;
+      transition: background .3s, color .3s;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--accent), #ff80ab);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 2rem; }
+    header p { margin: .25rem 0 0; font-size: .9rem; }
+
+    nav {
+      background: var(--accent-light);
+      padding: .5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: 600;
+      padding: .4rem .8rem;
+      border-radius: 8px;
+    }
+    nav a:hover, nav a:focus {
+      background: white;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    section {
+      margin: 1.5rem 0;
+      background: var(--card);
+      padding: 1rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+    }
+    h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--accent-light);
+      padding: .8rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: .9rem;
+      background: #f2ebfb;
+    }
+
+    /* Acessibilidade */
+    #acessibilidade {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      border: 2px solid var(--accent);
+      padding: .5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      z-index: 999;
+    }
+    #acessibilidade button {
+      padding: .4rem .6rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+    }
+    #acessibilidade button:hover,
+    #acessibilidade button:focus {
+      background: #5c2fb5;
+    }
+
+    /* Alto contraste */
+    body.alto-contraste {
+      --bg: #000;
+      --text: #fff;
+      --card: #222;
+      --accent: #ff0;
+      --accent-light: #444;
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <header>
+    <h1>CineMundo</h1>
+    <p>Projeto de Nicoly Kimberly</p>
+  </header>
+
+  <nav>
+    <a href="#destaques">Destaques</a>
+    <a href="#generos">Gêneros</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- Menu de acessibilidade -->
+  <div id="acessibilidade" aria-label="Menu de acessibilidade">
+    <button id="aumentar">A+</button>
+    <button id="diminuir">A-</button>
+    <button id="contraste">Contraste</button>
+    <button id="topo">↑ Topo</button>
+  </div>
+
+  <main id="conteudo">
+    <section id="destaques">
+      <h2>Filmes em Destaque</h2>
+      <div class="grid">
+        <div class="card">🎥 Invocação do mal 4</div>
+        <div class="card">🌌 Os aventureios</div>
+        <div class="card">🗻 Indiana Jones</div>
+        <div class="card">🦸 MIssão impossivel</div>
+      </div>
+    </section>
+
+    <section id="generos">
+      <h2>Principais Gêneros</h2>
+      <ul>
+        <li>Ação e Aventura</li>
+        <li>Comédia</li>
+        <li>Drama</li>
+        <li>Ficção Científica</li>
+        <li>Terror</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Quer sugerir um filme ou dar feedback? Envie uma mensagem!</p>
+      <form>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CineMundo — Projeto desenvolvido por Nicoly Kimberly.</p>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    let escala = 1;
+
+    document.getElementById('aumentar').addEventListener('click', () => {
+      escala = Math.min(1.5, escala + 0.1);
+      root.style.setProperty('--scale', escala);
+    });
+
+    document.getElementById('diminuir').addEventListener('click', () => {
+      escala = Math.max(0.8, escala - 0.1);
+      root.style.setProperty('--scale', escala);
+    });
+
+    document.getElementById('contraste').addEventListener('click', () => {
+      document.body.classList.toggle('alto-contraste');
+    });
+
+    document.getElementById('topo').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
