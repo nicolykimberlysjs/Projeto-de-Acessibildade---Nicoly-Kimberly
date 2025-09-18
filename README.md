@@ -55,16 +55,15 @@
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome" required><br><br>
         <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
         <button type="submit">Enviar</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 CineMundo — Projeto desenvolvido por Nicoly Kimberly.</p>
+    <p>CineMundo — Projeto desenvolvido por Nicoly Kimberly.</p>
   </footer>
 
-  <script src="script.js"></script>
+
 </body>
 </html>
